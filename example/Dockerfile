@@ -1,0 +1,16 @@
+# local image
+FROM docker-deno:v1.6.3
+
+EXPOSE 8080
+
+USER nonroot
+
+WORKDIR /app
+
+COPY ./deps.ts .
+RUN ["deno", "cache", "deps.ts"]
+
+COPY . .
+RUN ["deno", "cache", "mod.ts"]
+
+CMD ["run", "--allow-net", "mod.ts"]
