@@ -1,5 +1,4 @@
-# local image
-FROM docker-deno:v1.6.3
+FROM ghcr.io/unlog-app/docker-deno:v1.6.3
 
 EXPOSE 8080
 
