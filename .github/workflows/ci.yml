@@ -1,0 +1,18 @@
+name: ci
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build -t docker-deno - < Dockerfile
+
+      - name: Run image
+        run: docker run docker-deno
