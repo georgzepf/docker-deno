@@ -1,3 +1,4 @@
+// Copyright 2018-2021 the Deno authors. All rights reserved. MIT license.
 import { serve } from "./deps.ts";
 
 const server = serve({ hostname: "0.0.0.0", port: 8080 });
