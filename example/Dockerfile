@@ -1,4 +1,4 @@
-FROM ghcr.io/unlog-app/docker-deno:v1.7.2
+FROM ghcr.io/unlog-app/docker-deno:v1.7.4
 
 EXPOSE 8080
 

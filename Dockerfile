@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-ENV DENO_VERSION 1.7.2
+ENV DENO_VERSION 1.7.4
 ENV DENO_INSTALL /usr/local
 
 RUN apk add curl --no-cache --virtual .curl-package \
