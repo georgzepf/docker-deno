@@ -20,10 +20,10 @@ jobs:
       - name: Authenticate to GitHub Container Registry
         run: |
           export CR_PAT=${{ secrets.CR_PAT }}
-          echo $CR_PAT | docker login ghcr.io -u unlog-app --password-stdin
+          echo $CR_PAT | docker login ghcr.io -u georgzepf --password-stdin
 
       - name: Tag release image
-        run: docker tag docker-deno:${GITHUB_REF/refs\/tags\//} ghcr.io/unlog-app/docker-deno:${GITHUB_REF/refs\/tags\//}
+        run: docker tag docker-deno:${GITHUB_REF/refs\/tags\//} ghcr.io/georgzepf/docker-deno:${GITHUB_REF/refs\/tags\//}
 
       - name: Push release image to the GitHub Container Registry
-        run: docker push ghcr.io/unlog-app/docker-deno:${GITHUB_REF/refs\/tags\//}
+        run: docker push ghcr.io/georgzepf/docker-deno:${GITHUB_REF/refs\/tags\//}
